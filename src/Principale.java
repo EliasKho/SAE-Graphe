@@ -1,5 +1,6 @@
 public class Principale {
     public static void main(String[] args){
+
         GrapheListe g = new GrapheListe();
         g.ajouterArc("A","D",87);
         g.ajouterArc("A","B",12);
@@ -9,9 +10,7 @@ public class Principale {
         g.ajouterArc("E","D",43);
         g.ajouterArc("B","E",11);
 
-        for(int i=0;i<g.listeNoeuds().size();i++) {
-            System.out.println(g.listeNoeuds().get(i));
-        }
+        System.out.println(g.suivants("A"));
     }
 
 }
