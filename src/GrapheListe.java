@@ -12,7 +12,7 @@ public class GrapheListe implements Graphe{
             if(this.noeuds.get(i).equals(n))
                 trouve=true;
         }
-        if(trouve==false)
+        if(!trouve)
             i=-1;
         return i;
     }
@@ -26,4 +26,21 @@ public class GrapheListe implements Graphe{
         }
         this.adjacence.get(this.getIndice(depart)).ajouterArc(new Arc(destination,cout));
     }
+
+    public List<String> listeNoeuds(){
+        ArrayList<String> ls = new ArrayList<>();
+        for(int i=0;i<this.noeuds.size();i++){
+            ls.add(this.noeuds.get(i));
+        }
+        return ls;
+    }
+
+    public List<Arc> suivants(String n){
+        ArrayList<Arc> ls = new ArrayList<>();
+        for(int i=0;i<this.adjacence.size();i++){
+            ls.add(this.adjacence.get(this.getIndice(n)).getArcs().get(i));
+        }
+        return ls;
+    }
+
 }
