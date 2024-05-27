@@ -29,7 +29,7 @@ public class GrapheListe implements Graphe{
         if(!noeuds.contains((String)destination)){
             noeuds.add(destination);
         }
-        this.adjacence.get(this.getIndice(depart)).ajouterArc(new Arc(destination,cout));
+        this.adjacence.get(this.getIndice(depart)).ajouterArc(new Arc(destination,cout));//on ne peut pas recuperer l'élément de la liste adjacente car elle est vide
     }
 
     public List<String> listeNoeuds(){
