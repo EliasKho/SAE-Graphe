@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class GrapheListe implements Graphe{
     private ArrayList<String> noeuds;
@@ -23,6 +24,6 @@ public class GrapheListe implements Graphe{
         if(!noeuds.contains((String)destination)){
             noeuds.add(destination);
         }
-
+        this.adjacence.get(this.getIndice(depart)).ajouterArc(new Arc(destination,cout));
     }
 }
