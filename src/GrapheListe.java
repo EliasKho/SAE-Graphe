@@ -5,6 +5,11 @@ public class GrapheListe implements Graphe{
     private ArrayList<String> noeuds;
     private ArrayList<Arcs> adjacence;
 
+    public GrapheListe(){
+        this.noeuds= new ArrayList<>();
+        this.adjacence= new ArrayList<>();
+    }
+
     public int getIndice(String n){
         int i=0;
         boolean trouve=false;
