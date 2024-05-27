@@ -1,5 +1,3 @@
-package laby;
-
 public class Arc {
     private String dest;
     private double cout;

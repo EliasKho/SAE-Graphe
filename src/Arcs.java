@@ -1,5 +1,3 @@
-package laby;
-
 import java.util.List;
 
 public class Arcs {
