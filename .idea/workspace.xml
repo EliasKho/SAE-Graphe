@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ccfc221e-643f-4f85-b181-a16e3699278b" name="Changes" comment="README">
-      <change afterPath="$PROJECT_DIR$/src/laby/Arc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/laby/Arcs.java" afterDir="false" />
+    <list default="true" id="ccfc221e-643f-4f85-b181-a16e3699278b" name="Changes" comment="classes arc et arcs ajoutees">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arcs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arcs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716819620994</updated>
       <workItem from="1716819621981" duration="2000" />
-      <workItem from="1716820058079" duration="1101000" />
+      <workItem from="1716820058079" duration="2433000" />
     </task>
     <task id="LOCAL-00001" summary="README">
       <option name="closed" value="true" />
@@ -75,7 +76,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716820178304</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="classes arc et arcs ajoutees">
+      <option name="closed" value="true" />
+      <created>1716821180958</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716821180958</updated>
+    </task>
+    <task id="LOCAL-00003" summary="classes arc et arcs ajoutees">
+      <option name="closed" value="true" />
+      <created>1716821340084</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716821340084</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="README" />
-    <option name="LAST_COMMIT_MESSAGE" value="README" />
+    <MESSAGE value="classes arc et arcs ajoutees" />
+    <option name="LAST_COMMIT_MESSAGE" value="classes arc et arcs ajoutees" />
   </component>
 </project>
