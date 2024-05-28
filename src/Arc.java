@@ -40,8 +40,10 @@ public class Arc {
         else {
             this.cout = 1;
         }
+    }
 
-
+    public String toString() {
+        return "{" + "dest=" + dest + ", cout=" + cout + "}";
     }
 
 }
