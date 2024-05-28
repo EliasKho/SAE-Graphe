@@ -1,0 +1,77 @@
+Index: src/GrapheListe.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\r\n\r\npublic class GrapheListe implements Graphe{\r\n    private ArrayList<String> noeuds;\r\n    private ArrayList<Arcs> adjacence;\r\n\r\n    public int getIndice(String n){\r\n        int i=0;\r\n        boolean trouve=false;\r\n        while(i<noeuds.size() && !trouve){\r\n            if(this.noeuds.get(i).equals(n))\r\n                trouve=true;\r\n        }\r\n        if(trouve==false)\r\n            i=-1;\r\n        return i;\r\n    }\r\n\r\n    public void ajouterArc(String depart, String destination, double cout){\r\n        if(!noeuds.contains((String)depart)){\r\n            noeuds.add(depart);\r\n        }\r\n        if(!noeuds.contains((String)destination)){\r\n            noeuds.add(destination);\r\n        }\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GrapheListe.java b/src/GrapheListe.java
+--- a/src/GrapheListe.java	(revision cba6dc2be848bade33e439f2f208f0766f944863)
++++ b/src/GrapheListe.java	(date 1716822994623)
+@@ -24,5 +24,6 @@
+             noeuds.add(destination);
+         }
+ 
++
+     }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ccfc221e-643f-4f85-b181-a16e3699278b\" name=\"Changes\" comment=\"classes arc et arcs ajoutees\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Arc.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Arc.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Arcs.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Arcs.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Graphe.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Graphe.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 8\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2h3P7Z2jCizdHlFdSIdQNtpjcsW\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/Alexandre/OneDrive/Desktop/BUT/Maths/SAE/SAE-Graphe\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-22-openjdk-22-4caba194b151-f504ca98\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ccfc221e-643f-4f85-b181-a16e3699278b\" name=\"Changes\" comment=\"\" />\r\n      <created>1716819620994</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1716819620994</updated>\r\n      <workItem from=\"1716819621981\" duration=\"2000\" />\r\n      <workItem from=\"1716820058079\" duration=\"2433000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"README\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1716820178304</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1716820178304</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"classes arc et arcs ajoutees\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1716821180958</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1716821180958</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"classes arc et arcs ajoutees\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1716821340084</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1716821340084</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"README\" />\r\n    <MESSAGE value=\"classes arc et arcs ajoutees\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"classes arc et arcs ajoutees\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision cba6dc2be848bade33e439f2f208f0766f944863)
++++ b/.idea/workspace.xml	(date 1716822954210)
+@@ -4,11 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="ccfc221e-643f-4f85-b181-a16e3699278b" name="Changes" comment="classes arc et arcs ajoutees">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Arc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arc.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Arcs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arcs.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Graphe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graphe.java" afterDir="false" />
++    <list default="true" id="ccfc221e-643f-4f85-b181-a16e3699278b" name="Changes" comment="creation de la javadoc pour les classes Arc, Arcs et Graphe">
++      <change beforePath="$PROJECT_DIR$/src/GrapheListe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GrapheListe.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -66,7 +63,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1716819620994</updated>
+       <workItem from="1716819621981" duration="2000" />
+-      <workItem from="1716820058079" duration="2433000" />
++      <workItem from="1716820058079" duration="2889000" />
+     </task>
+     <task id="LOCAL-00001" summary="README">
+       <option name="closed" value="true" />
+@@ -92,7 +89,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1716821340084</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="creation de la javadoc pour les classes Arc, Arcs et Graphe">
++      <option name="closed" value="true" />
++      <created>1716822521580</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1716822521580</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -101,6 +106,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="README" />
+     <MESSAGE value="classes arc et arcs ajoutees" />
+-    <option name="LAST_COMMIT_MESSAGE" value="classes arc et arcs ajoutees" />
++    <MESSAGE value="creation de la javadoc pour les classes Arc, Arcs et Graphe" />
++    <option name="LAST_COMMIT_MESSAGE" value="creation de la javadoc pour les classes Arc, Arcs et Graphe" />
+   </component>
+ </project>
+\ No newline at end of file
