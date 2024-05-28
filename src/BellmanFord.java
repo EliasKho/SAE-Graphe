@@ -18,7 +18,7 @@ public class BellmanFord {
         return v;
     }
 
-    /*private boolean estFini(){
+    /*pivate boolean estFini(){
         boolean b =false;
         if()
 
