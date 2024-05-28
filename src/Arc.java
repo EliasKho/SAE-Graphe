@@ -42,8 +42,15 @@ public class Arc {
         }
     }
 
+    /**
+     * override de la methode to string pour afficher un Arc sous la forme dest(cout)
+     * @return
+     */
     public String toString() {
-        return "{" + "dest=" + dest + ", cout=" + cout + "}";
+        String s = this.dest+"(";
+        if(this.cout%1==0)
+            s+=(int)this.cout;
+        return s+")";
     }
 
 }

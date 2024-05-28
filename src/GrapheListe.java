@@ -48,13 +48,19 @@ public class GrapheListe implements Graphe{
         return new ArrayList<>();
     }
 
+    /**
+     * override de la methode toString affichant le graphe sous forme
+     * A -> B(12) D(87)
+     * @return
+     */
     public String toString() {
         String s="";
         for(int i=0;i<this.noeuds.size();i++){
-            s+="Partant de "+this.noeuds.get(i)+":\n";
+            s+=this.noeuds.get(i)+" -> ";
             for(int j=0;j<this.adjacence.get(i).getArcs().size();j++){
-                s+="-----"+this.adjacence.get(i).getArcs().get(j).toString()+"\n";
+                s+=this.adjacence.get(i).getArcs().get(j).toString()+" ";
             }
+            s+="\n";
         }
         return s;
     }
