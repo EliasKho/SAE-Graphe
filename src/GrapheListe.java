@@ -79,7 +79,7 @@ public class GrapheListe implements Graphe{
     /**
      * override de la methode toString affichant le graphe sous forme
      * A -> B(12) D(87)
-     * @return
+     * @return chaine de caractere toString pour l'utilisateur
      */
     public String toString() {
         String s="";
@@ -92,4 +92,5 @@ public class GrapheListe implements Graphe{
         }
         return s;
     }
+
 }
