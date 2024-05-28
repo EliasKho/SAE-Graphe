@@ -30,7 +30,7 @@ public class GrapheListe implements Graphe{
         }
         this.adjacence.get(this.getIndice(depart)).ajouterArc(new Arc(destination,cout));
     }
-        //on ne peut pas recuperer l'élément de la liste adjacente car elle est vide
+
 
     public List<String> listeNoeuds(){
         ArrayList<String> ls = new ArrayList<>();
