@@ -34,6 +34,14 @@ public class TestGraphe {
 
         assertEquals("B", grapheListe.suivants("A").get(0).getDest(), "le successeur de A doit être B");
     }
+    @Test
+    public void test_GrapheListe_toString(){
+        GrapheListe grapheListe = new GrapheListe();
+        grapheListe.ajouterArc("A", "B", 3);
+        grapheListe.ajouterArc("A", "C", 1);
+        grapheListe.ajouterArc("B", "E", 11);
+        assertEquals("A -> B(3) C(1) \n" + "B -> E(11) \n" + "C -> \n" + "E -> \n", grapheListe.toString());
+    }
 
 
 
