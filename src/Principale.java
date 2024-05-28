@@ -10,7 +10,9 @@ public class Principale {
         g.ajouterArc("E","D",43);
         g.ajouterArc("B","E",11);
 
+        System.out.println(g.listeNoeuds());
         System.out.println(g.toString());
+
     }
 
 }

@@ -2,14 +2,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GrapheListe implements Graphe{
+    /**
+     * attribut liste des noeuds du graphe
+     */
     private ArrayList<String> noeuds;
+    /**
+     * attribut liste des arcs reliant les noeuds du graphe
+     */
     private ArrayList<Arcs> adjacence;
 
+    /**
+     * constructeur vide créant une liste d'arc et de noeuds vide
+     */
     public GrapheListe(){
         this.noeuds= new ArrayList<>();
         this.adjacence= new ArrayList<>();
     }
 
+    /**
+     * methode qui renvoie l'indice du noeud en paramatetre. Renvoie -1 si noeud non présent
+     * @param n noeud dont on cherche l'indice
+     * @return indice du noeud
+     */
     public int getIndice(String n) {
         for (int i = 0; i < noeuds.size(); i++) {
             if (noeuds.get(i).equals(n)) {
@@ -19,6 +33,12 @@ public class GrapheListe implements Graphe{
         return -1;
     }
 
+    /**
+     * methode qui permet d'ajouter un arc au graphe
+     * @param depart noeud de depart
+     * @param destination noeud final
+     * @param cout cout de l'arc
+     */
     public void ajouterArc(String depart, String destination, double cout){
         if(!noeuds.contains(depart)){
             noeuds.add(depart);
@@ -31,7 +51,10 @@ public class GrapheListe implements Graphe{
         this.adjacence.get(this.getIndice(depart)).ajouterArc(new Arc(destination,cout));
     }
 
-
+    /**
+     * methode qui renvoie la liste de tous les noeuds du graphe
+     * @return liste des noeuds
+     */
     public List<String> listeNoeuds(){
         ArrayList<String> ls = new ArrayList<>();
         for(int i=0;i<this.noeuds.size();i++){
@@ -40,6 +63,11 @@ public class GrapheListe implements Graphe{
         return ls;
     }
 
+    /**
+     * methode qui renvoie une liste des arcs auxquels l'on peut acceder depuis l'arc de nom n
+     * @param n Nom de l'arc
+     * @return liste des arcs adjacents
+     */
     public List<Arc> suivants(String n) {
         int indice = getIndice(n);
         if (indice != -1) {
