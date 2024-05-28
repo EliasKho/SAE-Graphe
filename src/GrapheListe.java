@@ -28,7 +28,7 @@ public class GrapheListe implements Graphe{
             noeuds.add(destination);
             adjacence.add(new Arcs(new ArrayList<>()));
         }
-        this.adjacence.get(this.getIndice(destination)).ajouterArc(new Arc(destination,cout));
+        this.adjacence.get(this.getIndice(depart)).ajouterArc(new Arc(destination,cout));
     }
         //on ne peut pas recuperer l'élément de la liste adjacente car elle est vide
 

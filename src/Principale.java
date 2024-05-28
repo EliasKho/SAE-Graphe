@@ -11,7 +11,6 @@ public class Principale {
         g.ajouterArc("B","E",11);
 
         System.out.println(g.toString());
-        System.out.println(g.suivants("A"));
     }
 
 }
