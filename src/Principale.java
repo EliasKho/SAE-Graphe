@@ -15,8 +15,10 @@ public class Principale {
 
         //BellmanFord
         Valeur v = BellmanFord.resoudre(g, "A");
+        System.out.println(v);
 
-
+        Valeur u = Dijkstra.resoudre(g, "A");
+        System.out.println(u);
 
 
     }

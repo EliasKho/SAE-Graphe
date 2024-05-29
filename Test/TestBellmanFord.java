@@ -1,5 +1,5 @@
 import org.junit.jupiter.api.Test;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestBellmanFord {
     @Test
     public void test_resoudre(){
@@ -21,6 +21,9 @@ public class TestBellmanFord {
         vAttendue.setParent("D", "B");
         vAttendue.setValeur("E", 7);
         vAttendue.setParent("E", "C");
-        BellmanFord.resoudre(g, "A");
+
+        Valeur vObtenue = BellmanFord.resoudre(g, "A");
+
+        assertEquals(vAttendue, vObtenue);
     }
 }
