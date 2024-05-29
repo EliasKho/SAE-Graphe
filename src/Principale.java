@@ -12,6 +12,7 @@ public class Principale {
 
         System.out.println(g.listeNoeuds());
         System.out.println(g.toString());
+        System.out.println(g.getAntecedents("D"));
 
     }
 
