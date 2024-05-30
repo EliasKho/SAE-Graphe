@@ -11,6 +11,8 @@ public class TestBellmanFord {
         g.ajouterArc("E","D",5);
         g.ajouterArc("C","E",3);
 
+        Valeur vObtenue = BellmanFord.resoudre(g, "A");
+
         Valeur vAttendue = new Valeur();
         vAttendue.setValeur("A", 0);
         vAttendue.setValeur("B", 2);
@@ -22,8 +24,22 @@ public class TestBellmanFord {
         vAttendue.setValeur("E", 7);
         vAttendue.setParent("E", "C");
 
-        Valeur vObtenue = BellmanFord.resoudre(g, "A");
 
-        assertEquals(vAttendue, vObtenue);
+//        assertEquals(vAttendue, vObtenue);
+        // cette assertion de fonctionne pas donc je test un valeur par valeur et parent par parent, c'est pas pratique
+
+        assertEquals(vAttendue.getValeur("A"), vObtenue.getValeur("A"));
+        assertEquals(vAttendue.getParent("A"), vObtenue.getParent("A"));
+        assertEquals(vAttendue.getValeur("B"), vObtenue.getValeur("B"));
+        assertEquals(vAttendue.getParent("B"), vObtenue.getParent("B"));
+        assertEquals(vAttendue.getValeur("C"), vObtenue.getValeur("C"));
+        assertEquals(vAttendue.getParent("C"), vObtenue.getParent("C"));
+        assertEquals(vAttendue.getValeur("D"), vObtenue.getValeur("D"));
+        assertEquals(vAttendue.getParent("D"), vObtenue.getParent("D"));
+        assertEquals(vAttendue.getValeur("E"), vObtenue.getValeur("E"));
+        assertEquals(vAttendue.getParent("E"), vObtenue.getParent("E"));
+
+        //modif
+
     }
 }
