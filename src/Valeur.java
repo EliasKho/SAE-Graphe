@@ -88,4 +88,30 @@ public class Valeur {
 
     }
 
+    /**
+     * methode qui calcule le chemin vers une destination donnee a partir de la valeur
+     * sur laquelle s'applique la methode, donc liee a un sommet de depart
+     * @param destination
+     * @return
+     */
+    public List<String> calculerChemin(String destination) {
+
+        List<String> l = new ArrayList<>();
+        String rang = destination;
+        while (this.getParent(rang) != null) {
+            l.add(rang);
+            rang = this.getParent(rang);
+        }
+        l.add(rang);
+        //inverse la liste pour donner le chemin depuis le noeud de depart
+
+        for (int i = 0; i < l.size(); i++) {
+            String n = l.get(i);
+            n = (l.get(l.size() - i-1));
+            l.remove((l.get(l.size() - i-1)));
+            l.add(n);
+        }
+        return l;
+    }
+
 }
