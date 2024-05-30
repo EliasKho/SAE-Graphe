@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestGraphe {
@@ -43,7 +45,15 @@ public class TestGraphe {
         assertEquals("A -> B(3) C(1) \n" + "B -> E(11) \n" + "C -> \n" + "E -> \n", grapheListe.toString());
     }
 
+    //avec le deuxieme constructeur
+    @Test
+    public void test_GrapheListe_OK_constructeurParam() throws IOException {
+        GrapheListe grapheListe = new GrapheListe("../src/graphes/Graphe1.txt");
+        assertEquals(10, grapheListe.listeNoeuds().size(), "il doit y avoir 10 noeuds");
+        assertEquals("1", grapheListe.listeNoeuds().get(0));
+        assertEquals("2", grapheListe.listeNoeuds().get(1));
 
+    }
 
 
 }
