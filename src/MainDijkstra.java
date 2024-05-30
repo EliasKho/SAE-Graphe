@@ -8,6 +8,12 @@ public class MainDijkstra {
         g.ajouterArc("E","D",5);
         g.ajouterArc("C","E",3);
 
+        Valeur val = Dijkstra.resoudre(g, "A");
+
+        System.out.println("chemin le plus cours de A à E: " + val.calculerChemin("E")+ "\n");
+
+
+
         long dureeTotale = 0;
         long date_debut;
         long date_fin;
