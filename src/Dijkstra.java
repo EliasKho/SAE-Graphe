@@ -37,43 +37,39 @@ public class Dijkstra {
     /**
      * Classe representant un arc partant d'un noeud
      */
-    public static Valeur resoudre(GrapheListe g, String depart) {
+    public static Valeur resoudre(Graphe g, String depart) {
         Valeur valeur = new Valeur();
-        List<String> noeuds = g.listeNoeuds();
-        List<String> Q = new ArrayList<>(noeuds); // noeuds qu'il faudra traiter
+        List<String> l = new ArrayList<>();
 
         // Initialisation à +l'infini
-        for (String noeud : noeuds) {
-            valeur.setValeur(noeud, Double.MAX_VALUE);
-            valeur.setParent(noeud, null);
+        for (int i=0;i<g.listeNoeuds().size();i++) {
+            valeur.setValeur(g.listeNoeuds().get(i), Double.MAX_VALUE);
+            valeur.setParent(g.listeNoeuds().get(i), null);
+            l.add(g.listeNoeuds().get(i));
         }
         valeur.setValeur(depart, 0.0);
 
         //Etapes
-        while (!Q.isEmpty()) {
+        while (!l.isEmpty()) {
             // on cherche le noeud u avec la valeur minimale dans Q
             String u = null;
             double minValeur = Double.MAX_VALUE;
-            for (String noeud : Q) {
-                double noeudValeur = valeur.getValeur(noeud);
+            for (int i=0;i<l.size();i++) {
+                double noeudValeur = valeur.getValeur(l.get(i));
                 if (noeudValeur < minValeur) {
                     minValeur = noeudValeur;
-                    u = noeud;
+                    u = l.get(i);
                 }
             }
 
-            if (u == null) {
-                break; // si il n'y a plus de noeud à traiter
-            }
-
             //on l'enleve de la liste des noeuds à traiter
-            Q.remove(u);
+            l.remove(u);
 
             // pour chaque arc (u, v)
             List<Arc> arcs = g.suivants(u);
             for (Arc arc : arcs) {
                 String v = arc.getDest();
-                if (Q.contains(v)) {
+                if (l.contains(v)) {
                     double poids = arc.getCout();
                     double d = valeur.getValeur(u) + poids;
                     if (d < valeur.getValeur(v)) {
