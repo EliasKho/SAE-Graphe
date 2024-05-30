@@ -26,7 +26,7 @@ public class TestDijkstra {
 
 
 //        assertEquals(vAttendue, vObtenue);
-        //cette assertion de fonctionne pas donc je test un valeur par valeur et parent par parent, c'est pas pratique
+        //cette assertion ne fonctionne pas donc je test un valeur par valeur et parent par parent, c'est pas pratique
 
         assertEquals(vAttendue.getValeur("A"), vObtenue.getValeur("A"));
         assertEquals(vAttendue.getParent("A"), vObtenue.getParent("A"));
