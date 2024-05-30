@@ -22,6 +22,16 @@ public class MainDijkstra {
 
         System.out.println(dureeTotale*10E-9);//duree en secondes
 
+        date_debut = System.nanoTime();
+
+        Valeur v = BellmanFord.resoudre(g, "A");
+        System.out.println(v);
+
+        date_fin = System.nanoTime();
+
+        dureeTotale += date_fin - date_debut;//duree en nanosecondes
+
+        System.out.println(dureeTotale*10E-9);//duree en secondes
     }
 
 }

@@ -37,39 +37,36 @@ public class Dijkstra {
     /**
      * Classe representant un arc partant d'un noeud
      */
-    public static Valeur resoudre(Graphe g, String depart) {
+    public static Valeur resoudre(GrapheListe g, String depart) {
         Valeur valeur = new Valeur();
-        List<String> l = new ArrayList<>();
+        List<String> Q = new ArrayList<>();
 
-        // Initialisation à +l'infini
-        for (int i=0;i<g.listeNoeuds().size();i++) {
-            valeur.setValeur(g.listeNoeuds().get(i), Double.MAX_VALUE);
-            valeur.setParent(g.listeNoeuds().get(i), null);
-            l.add(g.listeNoeuds().get(i));
+        for (String noeud : g.listeNoeuds()) {
+            valeur.setValeur(noeud, Double.MAX_VALUE);
+            valeur.setParent(noeud, null);
+            Q.add(noeud);
         }
         valeur.setValeur(depart, 0.0);
 
-        //Etapes
-        while (!l.isEmpty()) {
-            // on cherche le noeud u avec la valeur minimale dans Q
+        while (!Q.isEmpty()) {
             String u = null;
             double minValeur = Double.MAX_VALUE;
-            for (int i=0;i<l.size();i++) {
-                double noeudValeur = valeur.getValeur(l.get(i));
+            for (String noeud : Q) {
+                double noeudValeur = valeur.getValeur(noeud);
                 if (noeudValeur < minValeur) {
                     minValeur = noeudValeur;
-                    u = l.get(i);
+                    u = noeud;
                 }
             }
 
-            //on l'enleve de la liste des noeuds à traiter
-            l.remove(u);
+            Q.remove(u);
 
-            // pour chaque arc (u, v)
+            if (u == null) break;
+
             List<Arc> arcs = g.suivants(u);
             for (Arc arc : arcs) {
                 String v = arc.getDest();
-                if (l.contains(v)) {
+                if (Q.contains(v)) {
                     double poids = arc.getCout();
                     double d = valeur.getValeur(u) + poids;
                     if (d < valeur.getValeur(v)) {
@@ -81,8 +78,6 @@ public class Dijkstra {
         }
 
         return valeur;
-
-
     }
 
 }
