@@ -26,7 +26,6 @@ public class Dijkstra {
 //    Fin Tant que
 //    Fin
 
-    //lexique à faire
 
     /**
      * methode pour trouver le nombre de chemins minimaux avec l'algorithme de Dijkstra

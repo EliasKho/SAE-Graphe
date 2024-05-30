@@ -1,13 +1,6 @@
 public class BellmanFord {
-    /**
-     * Mehode renvoyant le chemin le plus court pour aller d'un noeud depart vers tous les autres noeuds du graphe g
-     * utilisant la methode du point fixe de BellmanFord
-     * @param g
-     * @param depart
-     * @return
-     */
-    /*
-    algorithme
+        /*
+algorithme
 fonction pointFixe(Graphe g InOut, Noeud depart)
 
     taille = size(getnoeuds(g))
@@ -47,6 +40,15 @@ u : Noeud, noeud avec lequel on test si c'est plus aventageux de passer par celu
 a : Noeud, noeud de l'arc actuel dont on veut réduire la distance minimale en trouvant un autre arc
 poids : decimal, poids de larc dont on veut voir si il est plus aventageux
      */
+
+    /**
+     * Mehode renvoyant le chemin le plus court pour aller d'un noeud depart vers tous les autres noeuds du graphe g
+     * utilisant la methode du point fixe de BellmanFord
+     * @param g
+     * @param depart
+     * @return
+     */
+
     public static Valeur resoudre(Graphe g, String depart) {
         Valeur valeur = new Valeur();
         //on initialise les valeurs des noeuds a l'infini
