@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-public class TestBellmanFord {
+public class TestDijkstra {
     @Test
     public void test_resoudre(){
         GrapheListe g = new GrapheListe();
@@ -11,7 +11,7 @@ public class TestBellmanFord {
         g.ajouterArc("E","D",5);
         g.ajouterArc("C","E",3);
 
-        Valeur vObtenue = BellmanFord.resoudre(g, "A");
+        Valeur vObtenue = Dijkstra.resoudre(g, "A");
 
         Valeur vAttendue = new Valeur();
         vAttendue.setValeur("A", 0);
@@ -26,7 +26,7 @@ public class TestBellmanFord {
 
 
 //        assertEquals(vAttendue, vObtenue);
-        // cette assertion de fonctionne pas donc je test un valeur par valeur et parent par parent, c'est pas pratique
+        //cette assertion de fonctionne pas donc je test un valeur par valeur et parent par parent, c'est pas pratique
 
         assertEquals(vAttendue.getValeur("A"), vObtenue.getValeur("A"));
         assertEquals(vAttendue.getParent("A"), vObtenue.getParent("A"));
@@ -39,7 +39,6 @@ public class TestBellmanFord {
         assertEquals(vAttendue.getValeur("E"), vObtenue.getValeur("E"));
         assertEquals(vAttendue.getParent("E"), vObtenue.getParent("E"));
 
-        //modif
 
     }
 }
