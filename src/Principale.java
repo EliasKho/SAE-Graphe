@@ -1,5 +1,7 @@
+import java.io.IOException;
+
 public class Principale {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
 
         GrapheListe g = new GrapheListe();
         g.ajouterArc("A","D",87);
@@ -16,6 +18,9 @@ public class Principale {
         Valeur v = BellmanFord.resoudre(g, "A");
         System.out.println(v);
 
+        GrapheListe g2 = new GrapheListe("src/graphes/Graphe1.txt");
+
+        System.out.println(g2.listeNoeuds());
 
 
 

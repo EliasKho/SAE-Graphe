@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +22,31 @@ public class GrapheListe implements Graphe{
         this.noeuds= new ArrayList<>();
         this.adjacence= new ArrayList<>();
     }
+
+    public GrapheListe(String fichier) throws IOException {
+        this.noeuds= new ArrayList<>();
+        this.adjacence= new ArrayList<>();
+
+        BufferedReader br = new BufferedReader(new FileReader(fichier));
+
+        // lecture des lignes du fichier (stocke dans une liste)
+        String line = null;
+        String[] tab;
+        try {
+            line = br.readLine();
+            while ( line != null){
+                tab = line.split("\t");
+                this.ajouterArc(tab[0], tab[1], Double.parseDouble(tab[2]));
+
+                line = br.readLine();
+            }
+            br.close();
+        } catch (IOException e) {
+            // erreur lors de la lecture du fichier
+            throw new Error("Erreur I/O de lecture du Fichier "+fichier);
+        }
+    }
+
 
     /**
      * methode qui renvoie l'indice du noeud en paramatetre. Renvoie -1 si noeud non présent
