@@ -3,6 +3,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestBellmanFord {
     @Test
     public void test_resoudre(){
+        //graphe venant de https://favtutor.com/blogs/bellman-ford-python
         GrapheListe g = new GrapheListe();
         g.ajouterArc("A","B",2);
         g.ajouterArc("A","C",4);
